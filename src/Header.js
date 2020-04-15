@@ -1,5 +1,6 @@
 
 import React from "react";
+import User from "./User";
 // es6 module
 
 // function declration
@@ -12,10 +13,12 @@ import React from "react";
 //     return <h1>Header Component</h1>
 // }
 
-const Header = () => <h1>Header Component</h1>
+const Header = () => {
+    return <>
+        <h5>Header Component</h5>
+        <User name="Nikesh" age="20" dept="IT" />
+    </>
 
- const Footer = () => <div>&copy;2020 products.com</div>
-
-export { Footer };
+}
 
 export default Header;

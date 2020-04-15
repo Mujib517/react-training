@@ -1,15 +1,19 @@
 import React from 'react';
 import './App.css';
-import Head, { Footer } from "./Header";
+import Header from "./Header";
+import Footer from './Footer';
+import Counter from "./Counter";
 
 // live reload
+// obfuscation
+// ctrl + .
 
 function App() {
   return (
     <div className="App">
-      <Head />
+      <Header />
+      <Counter />
       <Footer />
-      <h1>Hello React!!</h1>
     </div>
   );
 }
