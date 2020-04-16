@@ -1,17 +1,18 @@
 import React from 'react';
 import './App.css';
-import Counter from "./Counter";
-import Timer from './Timer';
+import "bootstrap/dist/css/bootstrap.css";
+import Users from './Users';
 
 // live reload
 // obfuscation
 // ctrl + .
+// library used to build UIs
+// axios
 
 function App() {
   return (
     <div className="App">
-      <Timer />
-      <Counter count="0" />
+      <Users />
     </div>
   );
 }
