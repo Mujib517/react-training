@@ -1,8 +1,7 @@
 import React from 'react';
 import './App.css';
-import Header from "./Header";
-import Footer from './Footer';
 import Counter from "./Counter";
+import Timer from './Timer';
 
 // live reload
 // obfuscation
@@ -11,9 +10,8 @@ import Counter from "./Counter";
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Counter />
-      <Footer />
+      <Timer />
+      <Counter count="0" />
     </div>
   );
 }

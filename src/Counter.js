@@ -1,7 +1,7 @@
 
 import React from "react";
 
-
+// Find file Ctrl + E
 // class BaseMobile {
 //     state = {};
 
@@ -33,25 +33,22 @@ import React from "react";
 // Synthetic events
 // Java library JSOn
 // React JS library
+// props are readonly
+// state is mutable
 
 class Counter extends React.Component {
 
-    state = { count: 10 }
-    constructor() {
-        super();
-
-        // this.inc = this.inc.bind(this);
-        // this.dec = this.dec.bind(this);
-    }
+    state = { count: this.props.count };
 
     inc = () => {
-        // cannot read property state of undefined
-        // i m chaning state & i want re render
-        this.setState({ count: ++this.state.count });
+        // mutate
+        let cnt = this.state.count;
+        this.setState({ count: ++cnt });
     }
 
     dec = () => {
-        this.setState({ count: --this.state.count });
+        let cnt = this.state.count;
+        this.setState({ count: --cnt });
     }
 
     render() {
