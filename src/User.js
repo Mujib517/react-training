@@ -1,34 +1,8 @@
-
 import React from "react";
 
-// const User = () => <h1>Hello Nikesh!</h1>;
-// h1 - h6
-// properties
-// object
-// es6
-// open h1{color:red}
-// consumer User
-// snake casing
-// camel casing
-// parent
-// siblings
-// children
-// React fragments
-
-function User(props) {
-    const { name, age, dept } = props;
-
-    const styleObj = {
-        color: "red",
-        borderBottom: "1px solid grey",
-        borderRadius: "10px"
-    };
-
+export default function User({ user }) {
     return <div>
-        <h5 style={styleObj}>Hello {name}</h5>
-        <h6>You are {age} years old</h6>
-        <h6>You are from {dept}</h6>
+        <h4 className="text-muted">{user.login}</h4>
+        <img className="rounded img img-thumbnail" width="120" height="120" src={user.avatar_url} />
     </div>
 }
-
-export default User;
