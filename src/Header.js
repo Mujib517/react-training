@@ -1,24 +1,25 @@
-
 import React from "react";
-import User from "./User";
-// es6 module
-
-// function declration
-// function Header() {
-//     return <h1>Header Component</h1>
-// }
-
-// function expression
-// const Header = function () {
-//     return <h1>Header Component</h1>
-// }
 
 const Header = () => {
-    return <>
-        <h5>Header Component</h5>
-        <User name="Nikesh" age="20" dept="IT" />
-    </>
-
+    return <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a className="navbar-brand" href="#">My Cool App</a>
+        <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+                <li className="nav-item">
+                    <a className="nav-link" href="#">Home</a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link" href="#">About</a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link" href="#">Products</a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>;
 }
 
 export default Header;

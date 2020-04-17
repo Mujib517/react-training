@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.css";
-import Users from './Users';
+import Header from './Header';
+import Footer from './Footer';
+import Main from './Main';
 
 // live reload
 // obfuscation
@@ -12,7 +14,9 @@ import Users from './Users';
 function App() {
   return (
     <div className="App">
-      <Users />
+      <Header />
+      <Main />
+      <Footer />
     </div>
   );
 }
