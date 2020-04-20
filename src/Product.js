@@ -2,7 +2,7 @@ import React from "react";
 import NoImg from "./assets/img/noImg.png";
 import moment from "moment";
 
-const Product = ({ product }) => <div className="card col-md-5">
+const Product = ({ product }) => <div className="card col-md-4">
     <img className="card-img-top" src={product.image ? product.image : NoImg} width="200" height="200" />
     <div className="card-body">
         <h4>{product.brand} {product.model} </h4>

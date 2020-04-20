@@ -1,9 +1,14 @@
 import React from 'react';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.css";
+import { Route, Switch, Redirect } from "react-router-dom";
+import Home from './Home';
+import About from './About';
+import Contact from './Contact';
+import ProductList from './ProductList';
 import Header from './Header';
 import Footer from './Footer';
-import Main from './Main';
+import NotFound from './NotFound';
 
 // live reload
 // obfuscation
@@ -15,7 +20,13 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Main />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/products" component={ProductList} />
+        <Route path="*" component={NotFound} />
+      </Switch>
       <Footer />
     </div>
   );
