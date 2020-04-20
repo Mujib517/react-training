@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Product from "./Product";
 
 // angular   js inside html
 // JSP
@@ -12,7 +13,7 @@ export default class ProductList extends Component {
     constructor() {
         super();
 
-        axios.get("https://dl-product.herokuapp.com/api/products")
+        axios.get("https://exp-rest-api.herokuapp.com/api/products")
             .then(res => this.setState({ products: res.data.data }))
             .catch(err => this.setState({ error: true }))
     }
@@ -20,7 +21,8 @@ export default class ProductList extends Component {
     render() {
         return <>
             <h2>Products</h2>
-            {this.state.products.map(product => <h1>{product.model}</h1>)}
+            {this.state.products.map(product => <Product product={product} />)}
         </>
     }
 }
+
