@@ -7,6 +7,7 @@ import ProductList from './ProductList';
 import Header from './Header';
 import Footer from './Footer';
 import NotFound from './NotFound';
+import NewProduct from './NewProduct';
 
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -27,6 +28,7 @@ function App() {
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
         <Route path="/products" component={ProductList} />
+        <Route path="/product/new" component={NewProduct} />
         <Route path="*" component={NotFound} />
       </Switch>
       <Footer />
