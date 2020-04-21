@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Product from "./Product";
-import LoadingImg from "./assets/img/loading.gif";
 import "./ProductList.css";
+import Loading from "./Loading";
+import Error from "./Error";
 
 // angular   js inside html
 // JSP
@@ -22,10 +23,10 @@ export default class ProductList extends Component {
     render() {
         return <div className="offset-md-1">
             <h2>Products</h2>
-            {this.state.loading ?
-                <div className="loader">
-                    <img src={LoadingImg} />Loading...
-            </div> : null}
+            {/* {this.state.loading ? <Loading /> : null} */}
+
+            {this.state.error && <Error />}
+            {this.state.loading && <Loading />}
             {this.state.products.map(product => <Product product={product} />)}
         </div>
     }
