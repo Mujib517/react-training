@@ -1,6 +1,4 @@
 import React from 'react';
-import './App.css';
-import "bootstrap/dist/css/bootstrap.css";
 import { Route, Switch } from "react-router-dom";
 import Home from './Home';
 import About from './About';
@@ -9,6 +7,10 @@ import ProductList from './ProductList';
 import Header from './Header';
 import Footer from './Footer';
 import NotFound from './NotFound';
+
+import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "font-awesome/css/font-awesome.min.css";
 
 // live reload
 // obfuscation
