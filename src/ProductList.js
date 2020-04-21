@@ -19,10 +19,10 @@ export default class ProductList extends Component {
     }
 
     render() {
-        return <>
+        return <div className="offset-md-1">
             <h2>Products</h2>
             {this.state.products.map(product => <Product product={product} />)}
-        </>
+        </div>
     }
 }
 

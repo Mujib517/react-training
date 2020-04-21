@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.css";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Home from './Home';
 import About from './About';
 import Contact from './Contact';
