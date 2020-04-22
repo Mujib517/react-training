@@ -3,11 +3,11 @@ import { Route, Switch } from "react-router-dom";
 import Home from './Home';
 import About from './About';
 import Contact from './Contact';
-import ProductList from './ProductList';
+import ProductList from './product/ProductList';
 import Header from './Header';
 import Footer from './Footer';
 import NotFound from './NotFound';
-import NewProduct from './NewProduct';
+import NewProduct from './product/NewProduct';
 
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";

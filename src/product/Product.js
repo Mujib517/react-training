@@ -1,5 +1,5 @@
 import React from "react";
-import NoImg from "./assets/img/noImg.jpeg";
+import NoImg from "../assets/img/noImg.jpeg";
 import moment from "moment";
 
 const Product = ({ product }) => <div class="col-lg-4 col-md-5 col-sm-8">
