@@ -5,6 +5,7 @@ import "./ProductList.css";
 import Loading from "../Loading";
 import Error from "../Error";
 import NewComponentLink from "./NewComponentLink";
+import config from "../config";
 
 // angular   js inside html
 // JSP
@@ -16,7 +17,7 @@ export default class ProductList extends Component {
 
     constructor() {
         super();
-        axios.get("https://exp-rest-api.herokuapp.com/api/products")
+        axios.get(`${config.host}/api/products`)
             .then(res => this.setState({ products: res.data.data, loading: false }))
             .catch(err => this.setState({ error: true, loading: false }))
     }

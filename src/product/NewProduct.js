@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import config from "../config";
 
 export default class ProductList extends Component {
 
@@ -47,13 +48,13 @@ export default class ProductList extends Component {
             formData.append("inStock", this.state.inStock);
             formData.append("img", this.state.image);
 
-            var config = {
+            var configObj = {
                 headers: {
                     'content-type': 'multipart/form-data'
                 }
             };
 
-            axios.post("https://exp-rest-api.herokuapp.com/api/products", formData, config)
+            axios.post(`${config.host}/api/products`, formData, configObj)
                 .then(res => this.props.history.push("/products"))
                 .catch(err => console.log(err));
         }
