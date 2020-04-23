@@ -16,10 +16,21 @@ export default class ProductList extends Component {
 
     constructor() {
         super();
+        this.get();
+    }
 
-        getProducts()
-            .then(res => this.setState({ products: res.data.data, loading: false }))
-            .catch(err => this.setState({ error: true, loading: false }))
+    onDel = () => this.get();
+
+    get = async () => {
+        // getProducts()
+        //     .then(res => this.setState({ products: res.data.data, loading: false }))
+        //     .catch(err => this.setState({ error: true, loading: false }));
+        try {
+            const res = await getProducts();
+            this.setState({ products: res.data.data, loading: false });
+        } catch (e) {
+            this.setState({ error: true, loading: false })
+        }
     }
 
     render() {
@@ -31,7 +42,7 @@ export default class ProductList extends Component {
             <NewComponentLink />
             {error && <Error />}
             {loading && <Loading />}
-            {products.map(product => <Product product={product} />)}
+            {products.map(product => <Product product={product} onDelete={this.onDel} />)}
         </div>
     }
 }

@@ -21,4 +21,8 @@ const addProduct = (data) => {
     return axios.post(`${config.host}/api/products`, formData, configObj);
 }
 
-export { getProducts, addProduct }
+const deleteProduct = (id) => {
+    return axios.delete(`${config.host}/api/products/${id}`);
+}
+
+export { getProducts, addProduct, deleteProduct }
