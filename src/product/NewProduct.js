@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
-import config from "../config";
+import { addProduct } from "../services/ProductService";
 
 export default class ProductList extends Component {
 
@@ -40,21 +39,7 @@ export default class ProductList extends Component {
         // www.client.com
         // www.server.com/api
         if (!this.state.hasError) {
-
-            var formData = new FormData();
-            formData.append("brand", this.state.brand);
-            formData.append("model", this.state.model);
-            formData.append("price", this.state.price);
-            formData.append("inStock", this.state.inStock);
-            formData.append("img", this.state.image);
-
-            var configObj = {
-                headers: {
-                    'content-type': 'multipart/form-data'
-                }
-            };
-
-            axios.post(`${config.host}/api/products`, formData, configObj)
+            addProduct(this.state)
                 .then(res => this.props.history.push("/products"))
                 .catch(err => console.log(err));
         }

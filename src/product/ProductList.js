@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import axios from "axios";
 import Product from "./Product";
 import "./ProductList.css";
 import Loading from "../Loading";
 import Error from "../Error";
 import NewComponentLink from "./NewComponentLink";
-import config from "../config";
+import { getProducts } from "../services/ProductService";
 
 // angular   js inside html
 // JSP
@@ -17,7 +16,8 @@ export default class ProductList extends Component {
 
     constructor() {
         super();
-        axios.get(`${config.host}/api/products`)
+
+        getProducts()
             .then(res => this.setState({ products: res.data.data, loading: false }))
             .catch(err => this.setState({ error: true, loading: false }))
     }
