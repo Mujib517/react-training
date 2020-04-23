@@ -2,7 +2,7 @@ import React from "react";
 import NoImg from "../assets/img/noImg.jpeg";
 import moment from "moment";
 import { deleteProduct } from "../services/ProductService";
-
+import PropTypes from "prop-types";
 
 // const onDelete = (id) => {
 //     deleteProduct(id)
@@ -50,30 +50,43 @@ const Product = ({ product, onDelete }) => {
         }
     }
 
-    return <div class="col-lg-4 col-md-5 col-sm-8">
+    return <div className="col-lg-4 col-md-5 col-sm-8">
         <div className="card">
             <img alt="img" className="card-img-top"
                 src={product.image ? product.image : NoImg} />
 
             <h4 className="card-header">{product.brand} {product.model}</h4>
             <div className="card-body">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">${product.price}</li>
-                    <li class="list-group-item">InStock?: <input type="checkbox" checked={product.inStock} /></li>
-                    <li class="list-group-item">Updated: {moment(product.lastUpdated).fromNow()}</li>
+                <ul className="list-group list-group-flush">
+                    <li className="list-group-item">${product.price}</li>
+                    <li className="list-group-item">InStock?: <input type="checkbox" checked={product.inStock} /></li>
+                    <li className="list-group-item">Updated: {moment(product.lastUpdated).fromNow()}</li>
                 </ul>
             </div>
             <div className="card-footer">
                 <button disabled={!product.inStock} className="btn btn-primary">
                     Add to cart &nbsp;
-                <i class="fa fa-cart-plus"></i>
+                <i className="fa fa-cart-plus"></i>
                 </button>
                 <button onClick={onRemove} className="btn btn-danger btn-sm pull-right">
-                    <i class="fa fa-close"></i>
+                    <i className="fa fa-close"></i>
                 </button>
             </div>
         </div>
         <br />
     </div>;
 }
+
+Product.propTypes = {
+    onDelete: PropTypes.func.isRequired,
+    product: PropTypes.shape({
+        _id: PropTypes.string.isRequired,
+        brand: PropTypes.string.isRequired,
+        model: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        inStock: PropTypes.bool.isRequired,
+        image: PropTypes.string
+    })
+}
+
 export default Product;

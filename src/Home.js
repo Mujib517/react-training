@@ -1,5 +1,16 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-const Home = () => <h1>Home Component</h1>
+const Name = ({ name }) => <h4>Hello, {name}</h4>
+
+Name.propTypes = {
+    name: PropTypes.string.isRequired
+}
+
+
+const Home = () => <>
+    <Name name={10} />
+    <h1>Home Component</h1>
+</>
 
 export default Home;

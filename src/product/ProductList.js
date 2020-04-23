@@ -42,7 +42,9 @@ export default class ProductList extends Component {
             <NewComponentLink />
             {error && <Error />}
             {loading && <Loading />}
-            {products.map(product => <Product product={product} onDelete={this.onDel} />)}
+            {products.map(product => <Product key={product._id}
+                product={product}
+                onDelete={this.onDel} />)}
         </div>
     }
 }
