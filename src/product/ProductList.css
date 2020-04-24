@@ -6,3 +6,9 @@
     position: absolute;
     left:45%;
 }
+a{
+    color:grey !important;
+}
+a:hover{
+    text-decoration: none !important;
+}

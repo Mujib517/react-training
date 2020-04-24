@@ -12,6 +12,7 @@ import NewProduct from './product/NewProduct';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
+import ProductDetail from './product/ProductDetail';
 
 // live reload
 // obfuscation
@@ -29,6 +30,7 @@ function App() {
         <Route path="/contact" component={Contact} />
         <Route path="/products" component={ProductList} />
         <Route path="/product/new" component={NewProduct} />
+        <Route path="/product/:id" component={ProductDetail} />
         <Route path="*" component={NotFound} />
       </Switch>
       <Footer />
