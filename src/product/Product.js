@@ -50,7 +50,7 @@ const Product = ({ product, onDelete }) => {
         }
     }
 
-    return <div className="col-lg-4 col-md-5 col-sm-8">
+    return <div className="col-lg-4 col-md-6 col-sm-7">
         <div className="card">
             <img alt="img" className="card-img-top"
                 src={product.image ? product.image : NoImg} />
@@ -59,7 +59,7 @@ const Product = ({ product, onDelete }) => {
             <div className="card-body">
                 <ul className="list-group list-group-flush">
                     <li className="list-group-item">${product.price}</li>
-                    <li className="list-group-item">InStock?: <input type="checkbox" checked={product.inStock} /></li>
+                    <li className="list-group-item">InStock?: <input type="checkbox" readOnly checked={product.inStock} /></li>
                     <li className="list-group-item">Updated: {moment(product.lastUpdated).fromNow()}</li>
                 </ul>
             </div>
@@ -68,8 +68,9 @@ const Product = ({ product, onDelete }) => {
                     Add to cart &nbsp;
                 <i className="fa fa-cart-plus"></i>
                 </button>
-                <button onClick={onRemove} className="btn btn-danger btn-sm pull-right">
-                    <i className="fa fa-close"></i>
+                <button onClick={onRemove} className="btn btn-danger pull-right">
+                    Delete &nbsp;
+                    <i className="fa fa-trash"></i>
                 </button>
             </div>
         </div>
