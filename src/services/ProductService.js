@@ -1,8 +1,8 @@
 import axios from "axios"
 import config from "../config";
 
-const getProducts = () => {
-    return axios.get(`${config.host}/api/products`);
+const getProducts = (pageIndex, pageSize) => {
+    return axios.get(`${config.host}/api/products/${pageIndex}/${pageSize}`);
 }
 
 const addProduct = (data) => {
