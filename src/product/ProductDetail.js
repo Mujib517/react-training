@@ -4,8 +4,10 @@ import config from "../config";
 import Product from "./Product";
 
 const Review = ({ review }) => <>
+    <b>{review.name}</b>
     <h6>{review.subject}  Rating: {review.rating} *</h6>
-    <h6>{review.message}</h6>
+    <div>{review.message}</div>
+    <hr />
 </>;
 
 const Reviews = ({ reviews }) => <>
@@ -21,8 +23,10 @@ class ProductDetail extends Component {
 
     constructor(props) {
         super(props);
+    }
 
-        const id = props.match.params.id;
+    componentDidMount() {
+        const id = this.props.match.params.id;
         axios.get(`${config.host}/api/products/${id}`)
             .then(res => this.setState({ product: res.data }))
             .catch(err => console.log(err));
@@ -38,3 +42,7 @@ class ProductDetail extends Component {
 }
 
 export default ProductDetail;
+
+// Basic Auth (username & password base64) 
+// Token auth
+// Third party (Facebook,Google,)

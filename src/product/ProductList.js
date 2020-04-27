@@ -12,15 +12,21 @@ import { getProducts } from "../services/ProductService";
 
 export default class ProductList extends Component {
 
-    state = {
-        page: 0, pageSize: 200,
-        products: [], error: false,
-        loading: true,
-        totalPages: 0
-    };
 
+    // once
     constructor() {
         super();
+
+        this.state = {
+            page: 0, pageSize: 200,
+            products: [], error: false,
+            loading: true,
+            totalPages: 0
+        };
+    }
+
+    // once
+    componentDidMount() {
         this.get();
     }
 

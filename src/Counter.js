@@ -38,7 +38,17 @@ import React from "react";
 
 class Counter extends React.Component {
 
-    state = { count: this.props.count };
+    // state = { count: this.props.count ? this.props.count : 0 };
+    state = { count: this.props.count || 0 };
+
+    componentDidMount() {
+        console.log("Component did mount");
+    }
+
+    componentWillUnmount() {
+        console.log("Comonent removed");
+    }
+
 
     inc = () => {
         // mutate
