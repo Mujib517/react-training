@@ -13,6 +13,7 @@ import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
 import ProductDetail from './product/ProductDetail';
+import Login from './Login';
 
 // live reload
 // obfuscation
@@ -28,6 +29,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
+        <Route path="/login" component={Login} />
         <Route path="/products" component={ProductList} />
         <Route path="/product/new" component={NewProduct} />
         <Route path="/product/:id" component={ProductDetail} />
