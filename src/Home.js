@@ -36,9 +36,7 @@ componentDidCatch()
 // Nginx
 
 const Home = () => <>
-    <Name name={10} />
     <h1>Home Component</h1>
-    <Parent />
 </>
 
 // context api
