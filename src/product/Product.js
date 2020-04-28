@@ -51,13 +51,13 @@ const Product = ({ product, onDelete }) => {
         }
     }
 
-    return <div className="col-lg-4 col-md-6 col-sm-7">
-        <Link to={`/product/${product._id}`}>
-            <div className="card">
-                <img alt="img" className="card-img-top"
-                    src={product.image ? product.image : NoImg} />
+    return <div className="col-lg-8 col-md-6 col-sm-12">
+        <div className="card">
+            <img alt="img" className="card-img-top"
+                src={product.image ? product.image : NoImg} />
 
-                <h4 className="card-header">{product.brand} {product.model}</h4>
+            <h4 className="card-header">{product.brand} {product.model}</h4>
+            <Link to={`/product/${product._id}`}>
                 <div className="card-body">
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item">${product.price}</li>
@@ -65,18 +65,18 @@ const Product = ({ product, onDelete }) => {
                         <li className="list-group-item">Updated: {moment(product.lastUpdated).fromNow()}</li>
                     </ul>
                 </div>
-                <div className="card-footer">
-                    <button disabled={!product.inStock} className="btn btn-primary">
-                        Add to cart &nbsp;
+            </Link>
+            <div className="card-footer">
+                <button disabled={!product.inStock} className="btn btn-primary">
+                    Add to cart &nbsp;
                 <i className="fa fa-cart-plus"></i>
-                    </button>
-                    <button onClick={onRemove} className="btn btn-danger pull-right">
-                        Delete &nbsp;
+                </button>
+                <button onClick={onRemove} className="btn btn-danger pull-right">
+                    Delete &nbsp;
                     <i className="fa fa-trash"></i>
-                    </button>
-                </div>
+                </button>
             </div>
-        </Link>
+        </div>
         <br />
     </div>;
 }

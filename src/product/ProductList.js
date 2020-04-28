@@ -43,7 +43,10 @@ export default class ProductList extends Component {
                 products: res.data.data, loading: false
             });
         } catch (e) {
-            this.setState({ error: true, loading: false })
+            // if (e.status === 401)
+                this.props.history.push('/login');
+            // else
+            //     this.setState({ error: true, loading: false })
         }
     }
 

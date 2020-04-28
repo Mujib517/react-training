@@ -26,9 +26,9 @@ const addProduct = (data) => {
 
     var configObj = {
         headers: {
-            'content-type': 'multipart/form-data'
+            'content-type': 'multipart/form-data',
+            authorization: localStorage.getItem("token")
         },
-        authorization: localStorage.getItem("token")
     };
     return axios.post(`${config.host}/api/products`, formData, configObj);
 }
@@ -37,4 +37,8 @@ const deleteProduct = (id) => {
     return axios.delete(`${config.host}/api/products/${id}`, getConfig());
 }
 
-export { getProducts, addProduct, deleteProduct }
+const getProductById = (id) => {
+    return axios.get(`${config.host}/api/products/${id}`, getConfig());
+}
+
+export { getProducts, addProduct, deleteProduct, getProductById }

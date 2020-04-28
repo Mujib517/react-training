@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import config from "../config";
 import Product from "./Product";
+import { getProductById } from "../services/ProductService";
 
 const Review = ({ review }) => <>
     <b>{review.name}</b>
@@ -27,7 +28,7 @@ class ProductDetail extends Component {
 
     componentDidMount() {
         const id = this.props.match.params.id;
-        axios.get(`${config.host}/api/products/${id}`)
+        getProductById(id)
             .then(res => this.setState({ product: res.data }))
             .catch(err => console.log(err));
     }
