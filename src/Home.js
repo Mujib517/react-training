@@ -32,6 +32,9 @@ Error handling
 componentDidCatch()
 */
 
+// apache 
+// Nginx
+
 const Home = () => <>
     <Name name={10} />
     <h1>Home Component</h1>
