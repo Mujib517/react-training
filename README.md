@@ -9,3 +9,7 @@
 ### To run
 1. npm install
 2. npm start
+
+### Containerize
+docker build -t react-app .
+docker run -p 9000:80 react-app
