@@ -1,8 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Counter from "./Counter";
-import Timer from "./Timer";
-import Login from "./Login";
 
 const Name = ({ name }) => <h4>Hello, {name}</h4>
 
@@ -37,6 +34,7 @@ componentDidCatch()
 
 const Home = () => <>
     <h1>Home Component</h1>
+    <Parent />
 </>
 
 // context api

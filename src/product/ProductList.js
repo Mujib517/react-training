@@ -44,7 +44,7 @@ export default class ProductList extends Component {
             });
         } catch (e) {
             // if (e.status === 401)
-                this.props.history.push('/login');
+            this.props.history.push('/login');
             // else
             //     this.setState({ error: true, loading: false })
         }
@@ -75,7 +75,7 @@ export default class ProductList extends Component {
                     <div className="pull-left">
                         <h4>Showing page {this.state.page + 1} of {this.state.totalPages}</h4>
                     </div>
-                    <div class="pull-right">
+                    <div className="pull-right">
                         <button
                             disabled={this.state.page === 0}
                             onClick={this.prev} style={{ margin: "5px" }}

@@ -88,7 +88,7 @@ Product.propTypes = {
         brand: PropTypes.string.isRequired,
         model: PropTypes.string.isRequired,
         price: PropTypes.number.isRequired,
-        inStock: PropTypes.bool.isRequired,
+        inStock: PropTypes.bool,
         image: PropTypes.string
     })
 }

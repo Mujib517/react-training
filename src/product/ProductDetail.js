@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
-import config from "../config";
 import Product from "./Product";
 import { getProductById } from "../services/ProductService";
 
@@ -21,10 +19,6 @@ const Reviews = ({ reviews }) => <>
 class ProductDetail extends Component {
 
     state = { product: {} };
-
-    constructor(props) {
-        super(props);
-    }
 
     componentDidMount() {
         const id = this.props.match.params.id;
