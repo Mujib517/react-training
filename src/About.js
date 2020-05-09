@@ -1,5 +1,6 @@
 import React from "react";
+import StepperShell from "./StepperShell";
 
-const About = () => <h1>About Component</h1>
+const About = () => <StepperShell />
 
 export default About;
